@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/List_Hospital_menuBtn"
+        android:title="List"
+        android:iconTint="@color/teal_700"
+
+        android:icon="@drawable/ic_baseline_local_hospital_24"/>
+    <item
+        android:id="@+id/search_menuBtn"
+        android:title="Search"
+        android:iconTint="@color/teal_700"
+
+        android:icon="@drawable/ic_baseline_search_24"/>
+    <item
+        android:id="@+id/home_menuBtn"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:iconTint="@color/teal_700"/>
+    <item
+        android:id="@+id/shared_menuBtn"
+        android:title="Shared"
+        android:icon="@drawable/ic_baseline_playlist_add_check_circle_24"
+        android:iconTint="@color/teal_700"
+        />
+
+
+    <item
+        android:id="@+id/ViewUpload_menuBtn"
+        android:title="Uploads"
+        android:icon="@drawable/ic_baseline_view_list_24"
+        android:iconTint="@color/teal_700"/>
+
+
+</menu>

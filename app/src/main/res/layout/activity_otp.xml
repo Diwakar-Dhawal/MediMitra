@@ -1,0 +1,108 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".Client.ProfileActivity">
+    <RelativeLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/TopNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/teal_700">
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/PhotoRIV"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_person_black"
+            android:layout_centerHorizontal="true"
+            android:background="@color/teal_200"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_white_blank"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/teal_700"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/DetailProfileRL"
+        android:layout_below="@+id/PhotoRIV"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        >
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/NameProTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name  "
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/NameProEt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/NameProTV"
+            android:layout_toEndOf="@+id/NameProTV"
+            android:layout_alignStart="@+id/phoneProET"
+            android:text="None"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/NameProTV"
+            android:id="@+id/EmailProTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email  "
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/EmailProEt"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/EmailProTV"
+            android:layout_toEndOf="@+id/EmailProTV"
+            android:layout_alignStart="@+id/phoneProET"
+            android:text="None"
+            android:textColor="@color/black"
+            android:overScrollMode="always"
+
+            />
+        <TextView
+            android:id="@+id/phoneproTv"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/EmailProTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone No. "
+
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/phoneProET"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/EmailProEt"
+            android:layout_alignTop="@+id/phoneproTv"
+            android:layout_toEndOf="@+id/phoneproTv"
+            android:text="None"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminSharePdfActivity">
+    <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".UploadDocument"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/ShareUIDEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:ems="10"
+            android:hint="Reciever's Email"
+            android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/ShareEtPdfNameUPF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColorHint="@color/grey"
+            android:textColorHighlight="@color/black"
+            android:layout_below="@+id/ShareUIDEt"
+            android:layout_margin="15dp"
+            android:inputType="textPersonName"
+            android:hint="Report Type"
+            android:layout_alignParentEnd="true"
+            />
+
+        <EditText
+            android:id="@+id/ShareEtDoctorNameUPF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="15dp"
+            android:layout_below="@id/ShareEtPdfNameUPF"
+            android:inputType="textPersonName"
+            android:hint="Doctor's Name" />
+
+        <EditText
+            android:id="@+id/ShareEtHospitalNameUPF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="15dp"
+            android:layout_below="@id/ShareEtDoctorNameUPF"
+            android:inputType="textPersonName"
+            android:hint="Clinic Name" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/RLSelect"
+            android:layout_below="@id/ShareEtHospitalNameUPF"
+            >
+            <TextView
+                android:id="@+id/SharePdfNameUPF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@id/ShareselectPdfUPF"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="No Item Selected" />
+            <Button
+                android:id="@+id/ShareselectPdfUPF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Pdf"
+                android:layout_marginEnd="5dp"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/teal_200"/>
+
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/ShareToDatabaseUPF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RLSelect"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/teal_700"
+            android:text="Share" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

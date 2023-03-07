@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.ViewListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+
+            >
+            <EditText
+                android:id="@+id/PdfsearchEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:padding="10dp"
+                android:elevation="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/PdfFavBtn"
+                android:background="@color/white"
+                android:textColorHint="@color/grey"/>
+
+            <ImageButton
+                android:id="@+id/PdfFavBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/fav_fill_icon"
+                android:scaleType="fitCenter"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/teal_200"
+                android:background="@android:color/transparent"
+                android:elevation="8dp"
+                />
+
+        </RelativeLayout>
+        <View
+            android:id="@+id/postHorizontalendLine"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal_700"
+            />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeViewItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ViewPdfRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/itemscardview"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/noItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="No Item Available"
+        android:gravity="center"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+
+        />
+
+
+</FrameLayout>

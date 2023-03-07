@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Admin.AdminUploadPostActivity">
+    <TextView
+        android:layout_marginTop="200dp"
+        android:id="@+id/CaptionPostTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caption : "
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginStart="20dp"/>
+    <EditText
+        android:id="@+id/captionPostET"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@id/CaptionPostTV"
+        android:layout_toEndOf="@id/CaptionPostTV"
+        />
+
+    <ImageView
+        android:id="@+id/uploadPostIV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/UploadPostBtn"
+        android:layout_below="@+id/SelectPostBtn"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginEnd="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_launcher_background" />
+    <Button
+        android:id="@+id/SelectPostBtn"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/captionPostET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Select Post"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_200"/>
+    <Button
+        android:id="@+id/UploadPostBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="upload"
+        android:backgroundTint="@color/teal_700"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        />
+</RelativeLayout>

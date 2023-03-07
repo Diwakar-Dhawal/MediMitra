@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "832329589431",
+    "project_id": "medi-mitra",
+    "storage_bucket": "medi-mitra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832329589431:android:a73d514f4387b05c34e332",
+        "android_client_info": {
+          "package_name": "com.example.medi_mitra_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832329589431-7d9obmht3l1n9rgbqac71f8sbarfj6dd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8SQzGLIXPioZWgyuPCC5SIG02ftM_rcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832329589431-7d9obmht3l1n9rgbqac71f8sbarfj6dd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Client.QRActivity">
+
+    <!--We are using this image
+        view to display our QR code-->
+    <ImageView
+        android:id="@+id/idIVQrcode"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="qr_code" />
+    <TextView
+        android:id="@+id/QRCodeTV"
+        android:layout_below="@id/idIVQrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:text="Code : "/>
+    <EditText
+        android:id="@+id/QRCodeET"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/QRCodeTV"
+        android:layout_alignTop="@id/QRCodeTV"/>
+
+</RelativeLayout>
