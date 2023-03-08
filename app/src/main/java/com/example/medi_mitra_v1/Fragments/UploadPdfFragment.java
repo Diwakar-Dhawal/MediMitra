@@ -6,6 +6,8 @@ import static android.content.ContentValues.TAG;
 
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.DialogInterface;
@@ -13,6 +15,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +40,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.medi_mitra_v1.Client.ClientMainActivity;
 import com.example.medi_mitra_v1.Models.PdfInfoModel;
 import com.example.medi_mitra_v1.R;
@@ -69,6 +74,7 @@ public class UploadPdfFragment extends Fragment {
     Uri PDFUri;
     PdfPage pdfPage;
     PdfImageSetting mPdfImageSetting;
+    LottieAnimationView completed;
 
     ImageToPdf imageToPdf;
     ImageButton GalleryIB,PdfIB;
@@ -79,7 +85,6 @@ public class UploadPdfFragment extends Fragment {
 
     public UploadPdfFragment()
     {
-        // Required empty public constructor
     }
 
 
@@ -114,6 +119,7 @@ public class UploadPdfFragment extends Fragment {
         upload = v.findViewById(R.id.UploadToDatabaseUPF);
         noti = v.findViewById(R.id.PdfNameUPF);
         pdfName =v.findViewById(R.id.EtPdfNameUPF);
+        completed = v.findViewById(R.id.UploadCompletedLottie);
         docName =v.findViewById(R.id.EtDoctorNameUPF);
         hName =v.findViewById(R.id.EtHospitalNameUPF);
         PdfIB.setOnClickListener(new View.OnClickListener() {
@@ -198,10 +204,19 @@ public class UploadPdfFragment extends Fragment {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful())
                                 {
-                                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                                    ft.replace(R.id.flFragment, new ViewListFragment(), "NewFragmentTag");
-                                    ft.commit();
-                                    Toast.makeText(getActivity(), "Task Completed", Toast.LENGTH_SHORT).show();
+                                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            completed.setVisibility(View.VISIBLE);
+                                            completed.playAnimation();
+                                        }
+                                    }
+
+                                            ,
+                                    0);
+
+
+
                                     try {
                                         if(f.exists())
                                             f.delete();
@@ -215,6 +230,7 @@ public class UploadPdfFragment extends Fragment {
                                 else
                                 {
                                     Toast.makeText(getActivity(), "Task Failed", Toast.LENGTH_SHORT).show();
+
                                 }
                             }
                         });
@@ -237,6 +253,23 @@ public class UploadPdfFragment extends Fragment {
                         progressDialog.setProgress(currentProgress);
                     }
                 });
+
+        completed.addAnimatorListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                super.onAnimationCancel(animation);
+                completed.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                completed.setVisibility(View.GONE);
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.flFragment, new ViewListFragment(), "NewFragmentTag");
+                ft.commit();
+            }
+        });
 
     }
 
