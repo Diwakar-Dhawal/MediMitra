@@ -51,7 +51,8 @@ Here's why:
 
 OVERALL app can help improve communication and collaboration within the healthcare system, leading to better outcomes for patients and more efficient care for all.
 
-Use the `BLANK_README.md` to get started.
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
